@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 
   def cors_preflight_check
     if request.method == "OPTIONS"
-      headers['Access-Control-Allow-Origin'] = 'http://local.trapp.io'
+      headers['Access-Control-Allow-Origin'] = 'http://trapp.elysedougherty.com'
       headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS, PUT, DELETE'
       headers['Access-Control-Allow-Headers'] = 'Content-Type'
       render :text => '', :content_type => 'text/plain'
