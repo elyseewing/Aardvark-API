@@ -5,5 +5,7 @@ Aardvark::Application.routes.draw do
   post    '/question'       => 'questions#create',  :as => :create
   put     '/question/:id'   => 'questions#update',  :as => :update
   delete  '/question/:id'   => 'questions#destroy', :as => :delete
+  match   '/question'       => 'questions#create',  :via => :options
+  match   '/question/:id'   => 'questions#update',  :via => :options
 
 end
