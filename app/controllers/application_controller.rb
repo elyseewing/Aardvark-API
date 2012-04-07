@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   def set_access_control_headers
     if request.method != "OPTIONS"
-      headers['Access-Control-Allow-Origin'] = 'http://local.trapp.io'
+      headers['Access-Control-Allow-Origin'] = 'http://trapp.elysedougherty.com'
       headers['Access-Control-Request-Method'] = '*'
       headers['Access-Control-Allow-Headers'] = '*'
     end
