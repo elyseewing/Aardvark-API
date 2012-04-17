@@ -6,7 +6,7 @@ class Question < ActiveRecord::Base
     if (options.nil?)
       options = {}
     end
-    super(options.merge(:except => [ :user_id, :created_at, :updated_at ]))
+    super(options.merge(:include => [ :tags ], :except => [ :user_id, :created_at, :updated_at ]))
   end
 
   def self.random
