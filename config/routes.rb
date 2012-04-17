@@ -10,5 +10,7 @@ Aardvark::Application.routes.draw do
 
   post    '/tag'            => 'tags#create'
   delete  '/tag/:id'        => 'tags#destroy'
+  match   '/tag'            => 'tags#create',       :via => :options
+  match   '/tag/:id'        => 'tags#destroy',      :via => :delete
 
 end
