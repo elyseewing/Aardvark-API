@@ -1,5 +1,7 @@
 class Question < ActiveRecord::Base
 
+  has_many :tags
+
   def as_json(options={})
     if (options.nil?)
       options = {}

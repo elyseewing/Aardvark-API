@@ -22,6 +22,8 @@ class QuestionsController < ApplicationController
     question = Question.find(params[:id])
     question.update_attribute("question", params[:question])
     question.update_attribute("answer", params[:answer])
+    question.update_attribute("flag", params[:flag])
+    question.update_attribute("flag_text", params[:flag_text])
     question.update_attribute("updated_at", Date.current)
     #question.save()
     render :json => question
