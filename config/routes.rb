@@ -9,7 +9,7 @@ Aardvark::Application.routes.draw do
   match   '/question/:id'   => 'questions#update',  :via => :options
 
   post    '/tag'            => 'tags#create'
-  delete  '/tag/:id'        => 'tags#destroy'
+  delete  '/tag'            => 'tags#destroy'
   match   '/tag'            => 'tags#create',       :via => :options
   #match   '/tag/:id'        => 'tags#destroy',      :via => :delete
 
