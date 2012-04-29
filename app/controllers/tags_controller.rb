@@ -2,7 +2,7 @@ class TagsController < ApplicationController
 
   def show
     filter = params[:tag]
-    tag = Tag.find_by_tag(filter).random
+    tag = Tag.random(filter)
     render :json => Question.find(tag.question_id)
   end
 
