@@ -1,5 +1,11 @@
 class TagsController < ApplicationController
 
+  def show
+    filter = params[:tag]
+    tag = Tag.find_by_tag(filter).random
+    render :json => Question.find(tag.question_id)
+  end
+
   def create
     tag = Tag.new
     tag.question_id = params[:question_id]
