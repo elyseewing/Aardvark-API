@@ -1,0 +1,24 @@
+# MySQL.  Versions 4.1 and 5.0 are recommended.
+
+development:
+  adapter: mysql
+  database: aardvark_dev
+  username: root
+  password: root
+  pool: 5
+  timeout: 5000
+
+  adapter: mysql
+  database: aardvark_test
+  username: root
+  password: root
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: mysql
+  database: aardvark_prod
+  username: root
+  password: root
+  pool: 5
+  timeout: 5000

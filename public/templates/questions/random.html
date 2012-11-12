@@ -1,0 +1,55 @@
+
+<section id="question">
+
+  <div class="tags" style="margin-bottom: 20px">
+    <ul>
+      <% if (window.sessionStorage["tag"] == undefined || window.sessionStorage["tag"] == "") { %>
+	<li class="add"><span id="add-filter" style="cursor: pointer">Add Filter</span></li>
+      <% } else { %>
+        <li class="tag" id="applied"><span class="show"><%= window.sessionStorage["tag"] %></span><span class="noshow"><%= window.sessionStorage["tag"] %></span></li>
+      <% } %>
+    </ul>
+  </div>
+
+  <h1><%= model.get('question') %></h1>
+  <div class="answer">
+    <a class="trigger" onclick="toggle()" id="show-answer">Show answer</a>
+    <span class="hidden target" id="target"><%= model.get('answer') %></span>
+  </div>
+
+  <div class="next-question"><a href="" class="hidden" id="next-question">Next question</a></div>
+
+  <div class="tags">
+    <ul>
+      <% if (model.get('tags').length > 0) { %>
+	<% for (var i = 0; i < model.get('tags').length; i++) { %>
+	    <li class="tag" id="<%= model.get('tags')[i]["id"] %>"><span class="show"><%= model.get('tags')[i]["tag"] %></span><span class="noshow"><%= model.get('tags')[i]["tag"] %></span></li>
+	<% } %>
+      <% } %>
+      <li class="add"><span id="add-tag" style="cursor: pointer">Add Tag</span></li>
+    </ul>
+  </div>
+
+</section>
+<footer>
+  <h1>Trivia</h1>
+  <span id="add-question"  class="link">Add</span>
+  <span id="edit-question" class="link">Edit</span>
+  <% if (model.get("flag") == 1) { %>
+       <span class="flagged">FLAGGED</span>
+  <% } else { %>
+       <span id="flagged" class="hidden flagged">FLAGGED</span>
+       <span id="flag-question" class="link">Flag</span>
+  <% } %>
+
+</footer>
+
+<script type="text/javascript">
+    function toggle() {
+        if (jQuery('#target').hasClass('hidden')) {
+            jQuery('#target').removeClass('hidden');
+            jQuery('#show-answer').addClass('hidden');
+	    jQuery('#next-question').removeClass('hidden');
+        }
+    }
+</script>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Trivia</title>
+
+    <link href="http://trapp.elysedougherty.com/css/styles.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+ 
+    <script language="javascript">
+      
+      function toggle(id) {
+	if (document.getElementById("answer" + id).style.display == 'none') {
+	  document.getElementById("answer" + id).style.display = 'block';
+	  document.getElementById("show-answer" + id).style.display = 'none';
+	}
+	else {
+	  document.getElementById("answer" + id).style.display = 'none';
+	  document.getElementById("show-answer" + id).style.display = 'block';
+	}
+      }
+
+      function reset() {
+	document.getElementById("answer1").style.display = 'none';
+	document.getElementById("show-answer1").style.display = 'block';
+	document.getElementById("answer2").style.display = 'none';
+        document.getElementById("show-answer2").style.display = 'block';
+	document.getElementById("answer3").style.display = 'none';
+        document.getElementById("show-answer3").style.display = 'block';
+	document.getElementById("answer4").style.display = 'none';
+        document.getElementById("show-answer4").style.display = 'block';
+	document.getElementById("answer5").style.display = 'none';
+        document.getElementById("show-answer5").style.display = 'block';
+	document.getElementById("answer6").style.display = 'none';
+        document.getElementById("show-answer6").style.display = 'block';
+	document.getElementById("answer7").style.display = 'none';
+        document.getElementById("show-answer7").style.display = 'block';
+	document.getElementById("answer8").style.display = 'none';
+        document.getElementById("show-answer8").style.display = 'block';
+	document.getElementById("answer9").style.display = 'none';
+        document.getElementById("show-answer9").style.display = 'block';
+	document.getElementById("answer10").style.display = 'none';
+        document.getElementById("show-answer10").style.display = 'block';
+      }
+
+    </script>
+
+  </head>
+  <body style="width: 600px; margin-left: auto; margin-right: auto">
+      <h1 style="margin-top: 20px; margin-bottom: 20px; font-size: 36px">Trapp.io</h1>
+
+      <a class="trigger" onclick="reset()" style="cursor: pointer">Reset all answers</a>
+
+      <section id="question1">
+        <h3 style="margin-bottom: 10px">What is the middle name of US President Ulysses Grant?</h3>
+        <a class="trigger" onclick="toggle('1')" id="show-answer1" style="cursor: pointer">Show answer</a>
+        <span style="display: none" id="answer1">Simpson</span>
+      </section>
+
+      <section id="question2">
+        <h3 style="margin-bottom: 10px">Which US President gave a State of the Uion address that was a record eighty-one minutes long?</h3>
+        <a class="trigger" onclick="toggle('2')" id="show-answer2" style="cursor: pointer">Show answer</a>
+        <span style="display: none" id="answer2">Bill Clinton</span>
+      </section>
+
+      <section id="question3">
+        <h3 style="margin-bottom: 10px">Which US President had the shortest life?</h3>
+        <a class="trigger" onclick="toggle('3')" id="show-answer3" style="cursor: pointer">Show answer</a>
+        <span style="display: none" id="answer3">John F. Kennedy</span>
+      </section>
+
+      <section id="question4">
+        <h3 style="margin-bottom: 10px">Solar panels were installed on the roof of the White House under which US President?</h3>
+        <a class="trigger" onclick="toggle('4')" id="show-answer4" style="cursor: pointer">Show answer</a>
+        <span style="display: none" id="answer4">Jimmy Carter</span>
+      </section>
+
+      <section id="question5">
+        <h3 style="margin-bottom: 10px">How many US states share their name with the last name of a US President?</h3>
+        <a class="trigger" onclick="toggle('5')" id="show-answer5" style="cursor: pointer">Show answer</a>
+        <span style="display: none" id="answer5">One</span>
+      </section>
+
+      <section id="question6">
+        <h3 style="margin-bottom: 10px">How many US Presidents have been left-handed?</h3>
+        <a class="trigger" onclick="toggle('6')" id="show-answer6" style="cursor: pointer">Show answer</a>
+        <span style="display: none" id="answer6">Eight</span>
+      </section>
+
+      <section id="question7">
+        <h3 style="margin-bottom: 10px">Which US President started the tradition of throwing out the Presidential "first pitch" of baseball season?</h3>
+        <a class="trigger" onclick="toggle('7')" id="show-answer7" style="cursor: pointer">Show answer</a>
+        <span style="display: none" id="answer7">William Howard Taft</span>
+      </section>
+
+      <section id="question8">
+        <h3 style="margin-bottom: 10px">What US state has had the largest number of US Presidents born there?</h3>
+        <a class="trigger" onclick="toggle('8')" id="show-answer8" style="cursor: pointer">Show answer</a>
+        <span style="display: none" id="answer8">Virginia</span>
+      </section>
+
+      <section id="question9">
+        <h3 style="margin-bottom: 10px">Who was the first US President to visit all fifty states?</h3>
+        <a class="trigger" onclick="toggle('9')" id="show-answer9" style="cursor: pointer">Show answer</a>
+        <span style="display: none" id="answer9">Richard Nixon</span>
+      </section>
+
+      <section id="question10">
+        <h3 style="margin-bottom: 10px">Which US President purchased Alaska from Russia in 1867?</h3>
+        <a class="trigger" onclick="toggle('10')" id="show-answer10" style="cursor: pointer">Show answer</a>
+        <span style="display: none" id="answer10">Andrew Johnson</span>
+      </section>
+
+  </body>
+</html>

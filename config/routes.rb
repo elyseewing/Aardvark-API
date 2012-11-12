@@ -1,5 +1,8 @@
 Aardvark::Application.routes.draw do
 
+  match '/presidents', :to => redirect('/free/presidents.html')
+
+  get     '/multi/:count'   => 'questions#multi',   :as => :multi
   get     '/question/:id'   => 'questions#show',    :as => :show
   get     '/question'       => 'questions#index',   :as => :index
   post    '/question'       => 'questions#create',  :as => :create

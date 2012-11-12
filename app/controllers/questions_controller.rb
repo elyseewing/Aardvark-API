@@ -8,6 +8,11 @@ class QuestionsController < ApplicationController
     render :json => Question.find(params[:id])
   end
 
+  def multi
+    count = params[:count]
+    render :json => Question.random(count).to_json()
+  end
+
   def create
     question = Question.new
     question.question = params[:question]

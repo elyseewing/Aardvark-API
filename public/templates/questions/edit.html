@@ -1,0 +1,33 @@
+<section id="question-section">
+  <div style="display: none" class="errors"></div>
+  <form id="edit-question">
+    <textarea id="question" placeholder="What is this?"><%= model.get('question') %></textarea>
+    <textarea id="answer" placeholder="A Trivia App"><%= model.get('answer') %></textarea>
+    <label for="flag">Flag me?</label>
+      <input type="checkbox" id="flag" <%= (model.get('flag') == 1 ? "checked=checked" : '') %> onchange="toggleFlagSelect()" />
+      <select id="flag-reason" <%= (model.get('flag') == 0 ? "class=hidden" : '') %> style="margin-left: 20px">
+	<option value="" <%= (model.get('flag_text') == null ? "selected=true" : '') %>></option>
+	<option value="Wrong answer" <%= (model.get('flag_text') == "Wrong answer" ? "selected=true" : '') %>>I think the answer is wrong</option>
+	<option value="Bad formatting" <%= (model.get('flag_text') == "Bad formatting" ? "selected=true" : '') %>>Some of the formatting is messed up</option>
+	<option value="Something else" <%= (model.get('flag_text') == "Something else" ? "selected=true" : '') %>>Lolz, something else is broken</option>
+      </select>
+    <button id="save">Save Question</button>
+    <input type="hidden" id="id" name="id" value="<%= model.get('id') %>" />
+  </form>
+</section>
+<footer>
+  <h1>Trivia</h1>
+  <span id="random-question" class="link">Random Question</span>
+</footer>
+
+<script type="text/javascript">
+    function toggleFlagSelect() {
+        if (jQuery('#flag').is(":checked")) {
+            jQuery('#flag-reason').removeClass('hidden');
+        }
+	else {
+	    jQuery('#flag-reason').addClass('hidden');
+	    jQuery('#flag-reason option')[0].selected = true;
+	}
+    }
+</script>
